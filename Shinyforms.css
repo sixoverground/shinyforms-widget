@@ -1,0 +1,681 @@
+/* 
+Shinyforms Dashboard Widget.
+*/
+
+/* Base styles
+-------------------------------------------------- */
+
+body {
+	margin: 0px;
+}
+
+#frontImg {
+	position: absolute;
+	display: block;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	width: auto;
+	height: auto;
+}
+
+#info {
+	position: absolute;
+	right: 15px;
+	bottom: 18px;
+	width: 13px;
+	height: 13px;
+	left: 252px;
+	top: 54px;
+	cursor: pointer;
+}
+
+#back {
+	display: none;
+}
+
+#backImg {
+	position: absolute;
+	display: block;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	width: auto;
+	height: auto;
+}
+
+#done {
+	position: absolute;
+	left: 205px;
+	top: 135px;
+	cursor: pointer;
+}
+
+/* Extra background images
+-------------------------------------------------- */
+
+#frontCollapsedImg {
+	position: absolute;
+	left: 0px;
+	top: 50px;
+}
+
+/* Settings
+-------------------------------------------------- */
+
+#subdomain {
+	position: absolute;
+	left: 25px;
+	top: 65px;
+	width: 133px;
+	padding: 5px;
+	height: auto;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 11px;
+	color: #333333;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: none;
+	outline: none !important;
+}
+
+#domainLabel {
+	position: absolute;
+	left: 173px;
+	top: 70px;
+	width: 85px;
+	height: auto;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 11px;
+	color: #ddd;
+}
+
+#token {
+	position: absolute;
+	left: 25px;
+	top: 100px;
+	width: 220px;
+	padding: 5px;
+	height: auto;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 11px;
+	color: #333333;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: none;
+	outline: none !important;
+}
+
+/* Button progress elements
+-------------------------------------------------- */
+
+.button {
+	overflow: hidden;
+}
+
+.buttonLeft {
+	float: left;
+	width: 10px;
+	height: 22px;
+	background-image: url(Images/black-button-left.png);
+	vertical-align: bottom;
+}
+
+.buttonMiddle {
+	float: left;
+	padding-top: 3px;
+	height: 19px;
+	background-image: url(Images/black-button-middle.png);
+	background-repeat: repeat-x;
+	vertical-align: bottom;
+}
+
+.buttonRight {
+	float: left;
+	width: 10px;
+	height: 22px;
+	background-image: url(Images/black-button-right.png);
+	vertical-align: bottom;
+}
+
+/* Timer
+-------------------------------------------------- */
+
+#timer {
+	position: absolute;
+	left: 22px;
+	top: 15px;
+	width: 115px;
+	height: 25px;
+}
+
+#time {
+	position: absolute;
+}
+
+#hoursA {
+	position: absolute;
+	left: 0px;
+	top: 2px;
+	width: 15px;
+	height: 25px;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 25px;
+	color: #ffffff;
+	text-align: right;
+}
+
+#hoursB {
+	position: absolute;
+	left: 15px;
+	top: 2px;
+	width: 15px;
+	height: 25px;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 25px;
+	color: #ffffff;
+	text-align: right;
+}
+
+#colon1 {
+	position: absolute;
+	left: 29px;
+	top: 0px;
+	width: auto;
+	height: auto;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 25px;
+	color: #ffffff;
+}
+
+#minutesA {
+	position: absolute;
+	left: 34px;
+	top: 2px;
+	width: 15px;
+	height: 25px;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 25px;
+	color: #ffffff;
+	text-align: right;
+}
+
+#minutesB {
+	position: absolute;
+	left: 49px;
+	top: 2px;
+	width: 15px;
+	height: 25px;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 25px;
+	color: #ffffff;
+	text-align: right;
+}
+
+#colon2 {
+	position: absolute;
+	left: 63px;
+	top: 0px;
+	width: auto;
+	height: auto;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 25px;
+	color: #ffffff;
+}
+
+#secondsA {
+	position: absolute;
+	left: 68px;
+	top: 2px;
+	width: 15px;
+	height: 25px;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 25px;
+	color: #ffffff;
+	text-align: right;
+}
+
+#secondsB {
+	position: absolute;
+	left: 83px;
+	top: 2px;
+	width: 15px;
+	height: 25px;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 25px;
+	color: #ffffff;
+	text-align: right;
+}
+
+#resetButton {
+	position: absolute;
+	left: 102px;
+	top: 6px;
+	width: 22px;
+	height: 22px;
+	background-image: url(Images/reset-button.png);
+	cursor: pointer;
+}
+
+#startButton {
+	position: absolute;
+	left: 127px;
+	top: 6px;
+	width: 22px;
+	height: 22px;
+	background-image: url(Images/start-button.png);
+	cursor: pointer;
+}
+
+#pauseButton {
+	position: absolute;
+	left: 127px;
+	top: 6px;
+	width: 22px;
+	height: 22px;
+	display: none;
+	background-image: url(Images/stop-button.png);
+	cursor: pointer;
+}
+
+#enterTimeButton {
+	position: absolute;
+	left: 155px;
+	top: 6px;
+	width: 82px;
+	height: 22px;
+	font-family: HelveticaNeue-Bold, sans-serif;
+	font-size: 11px;
+	text-align: center;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+#enterTimeButtonProgress {
+	position: absolute;
+	left: 159px;
+	top: 6px;
+	width: 82px;
+	height: 22px;
+	font-family: HelveticaNeue-Bold, sans-serif;
+	font-size: 11px;
+	text-align: center;
+	color: #ffffff;
+	display: none;
+}
+
+#enterTimeButtonProgress .buttonMiddle {
+	width: 54px;
+}
+
+/* Entry
+-------------------------------------------------- */
+
+.disabled { 
+	color: #cccccc; 
+}
+
+#panel {
+	position: absolute;
+	left: 0px;
+	top: 50px;
+	width: 280px;
+	height: 34px; /* 132px */
+	display: none;
+	background-image: url(Images/front-expanded.png);
+	background-position: bottom;
+}
+
+#panelContent {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: none;
+}
+
+#entry {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+#projectMenuImage {
+	position: absolute;
+	left: 21px;
+	top: 12px;
+	z-index: 18;
+}
+
+#projectMenuText {
+	position: absolute;
+	left: 30px;
+	top: 12px;
+	width: 115px;
+	height: 22px;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 11px;
+	z-index: 19;
+	line-height: 22px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#projectMenu {
+	position: absolute;
+	left: 21px;
+	top: 12px;
+	width: 150px;
+	height: 22px;
+	opacity: 0;
+	z-index: 20;
+}
+
+#taskMenuImage {
+	position: absolute;
+	left: 21px;
+	top: 38px;
+	z-index: 18;
+}
+
+#taskMenuText {
+	position: absolute;
+	left: 30px;
+	top: 38px;
+	width: 115px;
+	height: 22px;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 11px;
+	z-index: 19;
+	line-height: 22px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#taskMenu {
+	position: absolute;
+	left: 21px;
+	top: 38px;
+	width: 150px;
+	height: 22px;
+	opacity: 0;
+	z-index: 20;
+}
+
+#hours {
+	position: absolute;
+	left: 177px;
+	top: 12px;
+	border-style: none;
+	border-width: initial;
+	border-color: initial;
+	padding-top: 0px;
+	padding-right: 8px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	width: 74px;
+	height: 48px;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 26px;
+	text-align: right;
+	background-image: url(Images/time-text-field.png);
+	background-color: transparent;
+	outline: none !important;
+}
+
+#notes {
+	color: black;
+	font-family: HelveticaNeue;
+	font-size: 8pt;
+	position: absolute;
+	right: auto;
+	bottom: auto;
+	margin-top: 0px;
+	left: 21px;
+	width: 132px;
+	height: 19px;
+	top: 64px;
+	padding: 0px 8px 10px 10px;
+	resize: none;
+	outline: none !important;
+	background-image: url(Images/notes-text-field.png);
+	background-color: transparent;
+	border: none;
+	line-height: 0;
+	vertical-align: top;
+}
+
+#submitTimeButton {
+	position: absolute;
+	left: 177px;
+	top: 64px;
+	width: 58px;
+	height: 22px;
+	font-family: HelveticaNeue-Bold, sans-serif;
+	font-size: 11px;
+	text-align: center;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+#submitTimeButtonProgress {
+	position: absolute;
+	left: 177px;
+	top: 64px;
+	width: 58px;
+	height: 22px;
+	font-family: HelveticaNeue-Bold, sans-serif;
+	font-size: 11px;
+	text-align: center;
+	color: #ffffff;
+	display: none;
+}
+
+#submitTimeButtonProgress .buttonMiddle {
+	width: 38px;
+}
+
+#cancelButton {
+	position: absolute;
+	left: 237px;
+	top: 64px;
+	width: 22px;
+	height: 22px;
+	background-image: url(Images/cancel-button.png);
+	cursor: pointer;
+}
+
+/* Report
+-------------------------------------------------- */
+
+#report {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: none;
+}
+
+#clientName {
+	font-size: 10px;
+	font-family: HelveticaNeue-Bold, sans-serif;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	position: absolute;
+	margin-top: 0px;
+	left: 21px;
+	top: 7px;
+	width: 156px;
+	height: auto;
+	color: #211f21;
+	white-space: nowrap;
+}
+
+#taskName {
+	font-size: 13px;
+	font-family: HelveticaNeue-Bold, sans-serif;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	position: absolute;
+	margin-top: 0px;
+	left: 21px;
+	top: 20px;
+	width: 156px;
+	height: auto;
+	color: #211f21;
+	white-space: nowrap;
+}
+
+#hoursEnteredLabel {
+	position: absolute;
+	left: 177px;
+	top: 7px;
+	width: 82px;
+	font-family: HelveticaNeue-Bold, sans-serif;
+	font-size: 10px;
+	text-align: right;
+	color: #211f21;
+}
+
+#hoursEntered {
+	position: absolute;
+	left: 177px;
+	top: 20px;
+	width: 82px;
+	font-family: HelveticaNeue-Bold, sans-serif;
+	font-size: 13px;
+	text-align: right;
+	color: #211f21;
+}
+
+#hoursSpent {
+	font-size: 10px;
+	font-family: HelveticaNeue, sans-serif;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	position: absolute;
+	margin-top: 0px;
+	left: 21px;
+	top: 40px;
+	width: 100px;
+	height: auto;
+}
+
+#budget {
+	position: absolute;
+	left: 90px;
+	top: 44px;
+	width: 100px;
+}
+
+#hoursLeft {
+	font-size: 10px;
+	font-family: HelveticaNeue, sans-serif;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	position: absolute;
+	margin-top: 0px;
+	left: 170px;
+	top: 40px;
+	width: 90px;
+	height: auto;
+	text-align: right;
+}
+
+#viewTimesheetButton {
+	position: absolute;
+	left: 127px;
+	top: 71px;
+	width: 108px;
+	height: 22px;
+	font-family: HelveticaNeue-Bold, sans-serif;
+	font-size: 11px;
+	text-align: center;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+#closeButton {
+	position: absolute;
+	left: 237px;
+	top: 71px;
+	width: 22px;
+	height: 22px;
+	font-family: HelveticaNeue-Bold, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	background-image: url(Images/close-button.png);
+	cursor: pointer;
+}
+
+/* Progress bar
+-------------------------------------------------- */
+
+.progress {
+	height: 18px;
+	margin-bottom: 18px;
+	overflow: hidden;
+	background-color: #F7F7F7;
+	background-image: -moz-linear-gradient(top, whiteSmoke, #F9F9F9);
+	background-image: -ms-linear-gradient(top, whiteSmoke, #F9F9F9);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(whiteSmoke), to(#F9F9F9));
+	background-image: -webkit-linear-gradient(top, whiteSmoke, #F9F9F9);
+	background-image: -o-linear-gradient(top, whiteSmoke, #F9F9F9);
+	background-image: linear-gradient(top, whiteSmoke, #F9F9F9);
+	background-repeat: repeat-x;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='whiteSmoke', endColorstr='#F9F9F9', GradientType=0);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.progress .bar {
+	width: 0;
+	height: 18px;
+	font-size: 12px;
+	color: white;
+	text-align: center;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #0E90D2;
+	background-image: -moz-linear-gradient(top, #149BDF, #0480BE);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#149BDF), to(#0480BE));
+	background-image: -webkit-linear-gradient(top, #149BDF, #0480BE);
+	background-image: -o-linear-gradient(top, #149BDF, #0480BE);
+	background-image: linear-gradient(top, #149BDF, #0480BE);
+	background-image: -ms-linear-gradient(top, #149BDF, #0480BE);
+	background-repeat: repeat-x;
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#149BDF', endColorstr='#0480BE', GradientType=0);
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: width 0.6s ease;
+	-moz-transition: width 0.6s ease;
+	-ms-transition: width 0.6s ease;
+	-o-transition: width 0.6s ease;
+	transition: width 0.6s ease;
+}
+
+/* Status bar
+-------------------------------------------------- */
+
+#status {
+	position: absolute;
+	left: 21px;
+	top: 54px;
+	width: 220px;
+	font-family: HelveticaNeue, sans-serif;
+	font-size: 11px;
+}
+
+

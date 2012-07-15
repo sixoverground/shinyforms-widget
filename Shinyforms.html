@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleAnimator.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleInfoButton.js" charset="utf-8"></script>
+    <link type="text/css" rel="stylesheet" href="Shinyforms.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/timer.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery.shinyforms.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Shinyforms.js" charset="utf-8"></script>
+</head>
+<body onload="load();">
+    <div id="front">
+        <img id="frontImg" src="Images/front-top.png" alt="">
+        <img id="frontCollapsedImg" src="Images/front-collapsed.png" alt="">
+        <div id="timer">
+            <div id="time">
+                <div id="hoursA">0</div>
+                <div id="hoursB">0</div>
+                <div id="colon1">:</div>
+                <div id="minutesA">0</div>
+                <div id="minutesB">0</div>
+                <div id="colon2">:</div>
+                <div id="secondsA">0</div>
+                <div id="secondsB">0</div>
+            </div>
+            <div id="resetButton"></div>
+            <div id="startButton"></div>
+            <div id="pauseButton"></div>
+            <div id="enterTimeButton"></div>
+            <div id="enterTimeButtonProgress" class="button">
+                <div class="buttonLeft"></div>
+                <div class="buttonMiddle"><img src="Images/progress.gif" alt="..."></div>
+                <div class="buttonRight"></div>
+            </div>
+        </div><!-- #timer -->
+        <div id="panel">
+            <div id="panelContent">
+                <div id="entry">
+                    <img id="projectMenuImage" src="Images/popup.png" alt="Select a project">
+                    <div id="projectMenuText"></div>
+                    <select id="projectMenu" name="projectMenu">
+                        <option value="">Select a project</option>
+                    </select>
+                    <img id="taskMenuImage" src="Images/popup.png" alt="Select a task">
+                    <div id="taskMenuText"></div>
+                    <select id="taskMenu">
+                        <option value="">Select a task</option>
+                    </select>
+                    <input type="text" id="hours" name="hours" value="0.00">
+                    <input type="text" id="notes" name="notes" value="">
+                    <div id="submitTimeButton"></div>
+                    <div id="submitTimeButtonProgress" class="button">
+                        <div class="buttonLeft"></div>
+                        <div class="buttonMiddle"><img src="Images/progress.gif" alt="..."></div>
+                        <div class="buttonRight"></div>
+                    </div>
+                    <div id="cancelButton"></div>
+                </div><!-- #entry -->
+                <div id="report">
+                    <div id="clientName"></div>
+                    <div id="projectName"></div>
+                    <div id="taskName"></div>
+                    <div id="hoursEnteredLabel">Hours entered</div>
+                    <div id="hoursEntered"></div>
+                    <div id="hoursSpent"></div>
+                    <div id="budget">
+                        <div class="progress">
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                    <div id="hoursLeft"></div>
+                    <div id="viewTimesheetButton"></div>
+                    <div id="closeButton"></div>
+                </div><!-- #report -->
+            </div><!-- #panelContent -->
+        </div><!-- #panel -->
+        <div id="status"></div>
+        <div id="info"></div>
+    </div>
+    <!-- #front -->
+    <div id="back">
+        <img id="backImg" src="Images/back.png" alt="Shinyforms">
+        <input type="text" id="subdomain" name="subdomain" value="" placeholder="subdomain">
+        <div id="domainLabel">.shinyforms.com</div>
+        <input type="text" id="token" name="token" value="" placeholder="API Token">
+        <div id="done"></div>
+    </div>
+    <!-- #back -->
+</body>
+</html>
