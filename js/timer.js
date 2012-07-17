@@ -1,5 +1,10 @@
+// Timer
+// =====
+
+// Create the timer.
 Timer = function() {};
 
+// Define parameters.
 Timer.prototype.paused = false;
 Timer.prototype.interval = null;
 Timer.prototype.startTime = 0;
@@ -8,6 +13,7 @@ Timer.prototype.elapsedTime = 0;
 Timer.prototype.time = '00:00:00';
 Timer.prototype.listeners = [];
 
+// Start the timer.
 Timer.prototype.start = function() {
 	if (this.paused) {
 		var now = new Date().getTime();
@@ -25,6 +31,7 @@ Timer.prototype.start = function() {
 	this.interval = setInterval(function(){self.update();}, 1000);
 };
 
+// Pause the timer.
 Timer.prototype.pause = function() {
 	if (this.interval) {
 		clearInterval(this.interval);
@@ -35,6 +42,7 @@ Timer.prototype.pause = function() {
 	}
 };
 
+// Reset the timer.
 Timer.prototype.reset = function() {
 	if (this.interval) {
 		clearInterval(this.interval);
@@ -44,8 +52,9 @@ Timer.prototype.reset = function() {
 	this.startTime = new Date().getTime();
 	this.currentTime = this.startTime;
 	this.update();
-}
+};
 
+// Update the timer and dispatch event.
 Timer.prototype.update = function() {
 	this.currentTime = new Date().getTime();
 	this.elapsedTime = this.currentTime - this.startTime;
@@ -66,13 +75,15 @@ Timer.prototype.update = function() {
     
 	this.time = h + ':' + m + ':' + s;
 	this.trigger('update', { time: this.time });    
-}
+};
 
+// Add an event listener that waits for dispatched events.
 Timer.prototype.addEventListener = function(type, callback) {
 	if (this.listeners[type]) this.listeners[type].push(callback);
 	else this.listeners[type] = [callback];
 };
 
+// Dispatch a timer event.
 Timer.prototype.trigger = function(type, args) {
 	var numListeners = this.listeners[type].length;
 	for (var i = 0; i < numListeners; i++) {

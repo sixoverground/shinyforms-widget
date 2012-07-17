@@ -1,3 +1,6 @@
+// Shinyforms API
+// ==============
+
 // Create the Shinyforms API.
 Shinyforms = function() {};
 

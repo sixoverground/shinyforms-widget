@@ -17,18 +17,18 @@ function load()
 	
 	// Debugging
 	if (DEBUG) {
-        // Setup local testing parameters
+		// Setup local testing parameters
 		Shinyforms.secure = false;
 		Shinyforms.domain = 'shinyforms.local:3000';
 		$('#subdomain').val('test');
 		$('#token').val('T51pTb5gKYGDypW8bwU4');
 	} else {
-        // Load saved preferences
-        if (window.widget) {
-            $('#subdomain').val(widget.preferenceForKey('subdomain'));
-            $('#token').val(widget.preferenceForKey('token'));
-        }
-    }
+		// Load saved preferences
+		if (window.widget) {
+			$('#subdomain').val(widget.preferenceForKey('subdomain'));
+			$('#token').val(widget.preferenceForKey('token'));
+		}
+	}
 	
 	// Setup preference buttons.	
 	gDoneButton = new AppleGlassButton(document.getElementById("done"), "Done", showFront);
@@ -324,6 +324,9 @@ function load()
 			// Show the report.
 			$('#entry').hide();
 			$('#report').show();
+			
+			// Reset the timer.
+			Shinyforms.timer.reset();
             
 		});
     
@@ -359,9 +362,9 @@ function load()
 //
 function remove()
 {
-    // Stop any timers to prevent CPU usage
-    // Remove any preferences as needed
-    // widget.setPreferenceForKey(null, dashcode.createInstancePreferenceKey("your-key"));
+	// Stop any timers to prevent CPU usage
+	// Remove any preferences as needed
+	// widget.setPreferenceForKey(null, dashcode.createInstancePreferenceKey("your-key"));
 }
 
 //
@@ -370,7 +373,7 @@ function remove()
 //
 function hide()
 {
-    // Stop any timers to prevent CPU usage
+	// Stop any timers to prevent CPU usage
 }
 
 //
@@ -379,7 +382,7 @@ function hide()
 //
 function show()
 {
-    // Restart any timers that were stopped on hide
+	// Restart any timers that were stopped on hide
 }
 
 //
@@ -388,12 +391,12 @@ function show()
 //
 function sync()
 {
-    // Retrieve any preference values that you need to be synchronized here
-    // Use this for an instance key's value:
-    // instancePreferenceValue = widget.preferenceForKey(null, dashcode.createInstancePreferenceKey("your-key"));
-    //
-    // Or this for global key's value:
-    // globalPreferenceValue = widget.preferenceForKey(null, "your-key");
+	// Retrieve any preference values that you need to be synchronized here
+	// Use this for an instance key's value:
+	// instancePreferenceValue = widget.preferenceForKey(null, dashcode.createInstancePreferenceKey("your-key"));
+	//
+	// Or this for global key's value:
+	// globalPreferenceValue = widget.preferenceForKey(null, "your-key");
 }
 
 //
